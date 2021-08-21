@@ -1,0 +1,241 @@
+
+html {
+  overflow: hidden;
+
+  color:white;
+
+font-family: 'SanAndreas';
+src: url('html/Beckett.ttf');
+
+letter-spacing: 0.7px;
+font-size:16px;
+
+font-weight: 600;
+text-decoration: none;
+font-style: normal;
+font-variant: small-caps;
+text-transform: none;
+
+   text-shadow: 1px 1px 1px rgba(1,1,1,1);
+}
+.vehicle {
+  display:block;
+  min-width:100%;
+}
+
+.time {
+  position: relative;
+  top: -60px;
+  left: -65px;
+  display:block;
+  min-width:100%;
+  margin-left:25px;
+  padding-bottom:1%;
+}
+
+.street {
+  display:block;
+  min-width:100%;
+  clear:both;
+  padding-top:1%;
+  margin-left:25px;
+  right: 890px;
+  top: 100px;
+  margin-top: 5px
+}
+
+.street-txt {
+  margin-top: 5px;
+  padding-left: 115px;
+  position: absolute;
+  top: 7px;
+  left: 735px;
+}
+
+.street2 {
+  display:block;
+  min-width:100%;
+  clear:both;
+  padding-top:1%;
+  margin-left:25px;
+  right: 890px;
+  top: 100px;
+  margin-top: 5px
+}
+
+.street-txt2 {
+  margin-top: 5px;
+  padding-left: 115px;
+  position: absolute;
+  top: 7px;
+  left: 735px;
+}
+
+.left {
+  float:left;
+}
+
+.smalltext {
+  position: relative;
+  top: -40px;
+  left: -70px;
+  font-size:10px;
+  margin-left:10px;
+}
+
+.fuelamount {
+  position: relative;
+  top: -40px;
+  left:-65px;
+}
+.speedamount {
+  position: relative;
+  top: -40px;
+  left:-65px;
+}
+
+.atlamount {
+  margin-left:25px;
+}
+
+.belt {
+  position: relative;
+  left: -150px;
+  top:-70px;
+}
+
+.harness {
+  margin-left:25px;
+}
+.nos {
+  margin-left:25px;
+}
+.engine {
+  position: relative;
+  left: -150px;
+  top:-70px;
+}
+.fuel {
+  position: relative;
+  left: -150px;
+  top:-70px;
+}
+
+.red {
+  color:red;
+
+font-weight: bold; 
+letter-spacing: 1px; 
+line-height: 1; 
+}
+
+.green {
+  color:green;
+
+font-weight: bold; 
+letter-spacing: 1px; 
+line-height: 1; 
+}
+.blue {
+  color:rgb(102, 143, 255);
+ 
+font-weight: bold; 
+letter-spacing: 1px; 
+line-height: 1; 
+text-shadow: 1px 1px black;
+}
+.yellow {
+  color:yellow;
+
+font-weight: bold; 
+letter-spacing: 1px; 
+line-height: 1; 
+text-shadow: 1px 1px black;
+}
+
+.wrap {
+  margin-top:51%;
+  margin-left:16%;
+}
+.full-screen {
+  display:none;
+  width: 100%;
+  height:100%;
+}
+
+/* Compass -------------------- */
+.lower {
+  margin-top: 53% !important;
+}
+.timelower {
+  padding-bottom: 0px !important;
+}
+.hide {
+  display: none !important;
+}
+.direction {
+  color: #111111;
+  background-color: rgba(226, 226, 226, 0);
+  /* border-radius: 5px; */
+  width: 100px;
+  height: 26px;
+  overflow: hidden;
+  position: absolute;
+  right: 1080px;
+  top: 0px;
+  margin-top: 5px
+}
+
+.direction>.image {
+  height: 100%;
+  background-position: center center;
+  background-size: 400px;
+  background-repeat: repeat;
+  width: 800%;
+  z-index: 1;
+  background-image: url('compass.png');
+}
+
+
+/*-------------------------------------------*/
+
+
+        .textt {
+            padding: 0 60px;
+            width: 350px;
+            height: 500px;
+            background-image: url("https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ed68e8310716f0007411996%2F0x0.jpg");
+            font-size: 20px;
+            margin: auto;
+        }
+    .button {
+  position: relative;
+  border: none;
+  font-size: 20px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #2e2e2e;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}

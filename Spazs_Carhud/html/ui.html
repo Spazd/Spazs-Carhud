@@ -1,0 +1,149 @@
+<head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="scripts.js" type="text/javascript"></script>
+    <script src="debounce.min.js" type="text/javascript"></script>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+
+<body>
+<div class="full-screen">
+    <div class="wrap">
+        <div class="time">12:00</div>
+
+        <div class="vehicle"> 
+            <div class="fuelamount left"> 100 </div>  <div class="smalltext left"> Fuel </div>
+            <div class="speedamount left"> 100 </div> <div id="mphmi" class="smalltext left"> MPH </div>
+            <div class="atlamount left"> 0 </div> <div class="atlamounttxt smalltext left"> FT </div>
+            <div class="belt left"> <img src='belt.png' width='30px' height='25px'> </div>
+            <div class="ENGINE left"> <img src='engine.png' width='25px' height='25px'> </div>
+            <div class="FUEL left"> <img src='gas.png' width='25px' height='25px'> </div>
+            <div class="harness left"> HARNESS </div>
+            <div class="nos left"> 100 </div> 
+        </div>
+        <div class="street">
+            <div class="direction"><div class="image"></div></div>
+            <div class="street-txt">Los Santos | Wicket St | Hawick</div>
+            <div class="street-txt2">Los Santos</div>
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="textt" style="display: none;">
+        <br>
+
+        <div style="color: white; text-align: center; ">FPS and Other Settings
+
+            <button id="kapatma" style="margin-left: 100px; display: none;">X</button>
+            <hr>
+        </div>
+
+        <div style="color: white;">Low FPS Hud: <button class="button" onclick="dusukfps()">SELECT</button> <font id="dusukfpstik">❌</font>
+        </div>
+        <hr>
+
+        <div style="color: white;">Normal FPS Hud: <button class="button" onclick="normalfps()">SELECT</button><font id="normalfpstik">❌</font>
+        </div>
+        <hr>
+
+        <div style="color: white;">High FPS Hud: <button class="button" onclick="yuksekfps()">SELECT</button><font id="yuksekfpstik">❌</font>
+        </div>
+        <hr>
+
+        <div style="color: white;">Very High FPS Hud: <button class="button" onclick="cokyuksekfps()">SELECT</button><font id="cokyuksekfpstik">❌</font>
+        </div>
+        <hr>
+        
+        <div style="color: white;">Speed Type 🚗: <button class="button" onclick="mph()">MPH</button><font id="mphtik">✔️</font><button class="button" onclick="kmh()">KMH</button><font id="kmhtik">❌</font>
+        </div>
+        <hr>
+        <button class="button" onclick="kapat()">CLOSE</button>
+    </div>
+</body>
+
+
+<script type="text/javascript" id="javascriptHidingScript" language="javascript">
+    var status = "showing";
+
+    function toggleVisibility(id) {
+        var element = document.getElementById(id);
+        if (element.style.display == 'block') {
+            element.style.display = 'none';
+        } else {
+            element.style.display = 'block'
+        }
+    };
+
+    document.querySelector("#kapatma").onclick = () => {
+        document.querySelector(".textt").style.display = "none"
+    };
+
+function kapat() {
+    $.post('http://Spazs_Carhud/kapatButton');
+    document.querySelector(".textt").style.display = "none"
+}
+
+function dusukfps() {
+  	document.getElementById("dusukfpstik").innerHTML = "✔️";
+  	document.getElementById("normalfpstik").innerHTML = "❌";
+  	document.getElementById("yuksekfpstik").innerHTML = "❌";
+  	document.getElementById("cokyuksekfpstik").innerHTML = "❌";
+    $.post('http://Spazs_Carhud/dusukfpstrigger');
+}
+
+function normalfps() {
+  	document.getElementById("dusukfpstik").innerHTML = "❌";
+  	document.getElementById("normalfpstik").innerHTML = "✔️";
+  	document.getElementById("yuksekfpstik").innerHTML = "❌";
+  	document.getElementById("cokyuksekfpstik").innerHTML = "❌";
+    $.post('http://Spazs_Carhud/normalfpstrigger');
+}
+
+function yuksekfps() {
+  	document.getElementById("dusukfpstik").innerHTML = "❌";
+  	document.getElementById("normalfpstik").innerHTML = "❌";
+  	document.getElementById("yuksekfpstik").innerHTML = "✔️";
+  	document.getElementById("cokyuksekfpstik").innerHTML = "❌";
+    $.post('http://Spazs_Carhud/yuksekfpstrigger');
+}
+
+function cokyuksekfps() {
+  	document.getElementById("dusukfpstik").innerHTML = "❌";
+  	document.getElementById("normalfpstik").innerHTML = "❌";
+  	document.getElementById("yuksekfpstik").innerHTML = "❌";
+  	document.getElementById("cokyuksekfpstik").innerHTML = "✔️";
+    $.post('http://Spazs_Carhud/cokyuksekfpstrigger');
+}
+
+function kmh() {
+  document.getElementById("kmhtik").innerHTML = "✔️";
+  document.getElementById("mphtik").innerHTML = "❌";
+  document.getElementById("mphmi").innerHTML = "KMH";
+  $.post('http://Spazs_Carhud/kmhtrigger');
+}
+
+function mph() {
+  document.getElementById("kmhtik").innerHTML = "❌";
+  document.getElementById("mphtik").innerHTML = "✔️";
+  document.getElementById("mphmi").innerHTML = "MPH";
+  $.post('http://Spazs_Carhud/mphtrigger');
+}
+
+</script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="script.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>
