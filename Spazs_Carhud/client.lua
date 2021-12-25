@@ -1,4 +1,4 @@
-QBCore = nil
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local Keys = {
 	["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57,
@@ -15,16 +15,7 @@ local Keys = {
 local fueling = false
 
 local hudfps = 1500
-Citizen.CreateThread(function() 
-    while true do
-        Citizen.Wait(10)
-        if QBCore == nil then
-            TriggerEvent("QBCore:GetObject", function(obj) QBCore = obj end)
-            Citizen.Wait(200)
-        end
-    end
-end)
-----------------------------
+
 RegisterCommand("examplehud",function()
     TriggerEvent('HUD:Init')
 end)
